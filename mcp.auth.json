@@ -1,0 +1,32 @@
+{
+  "status": "ok",
+  "message": "VillageOS MCP serverless function is healthy",
+  "tool": {
+    "name": "auth_request_otp",
+    "description": "Request an OTP SMS for passwordless signin or signup. Requires 'sessionid'. Tokens are not returned.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "sessionid": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string",
+          "enum": [
+            "signin",
+            "signup"
+          ]
+        }
+      },
+      "required": [
+        "sessionid",
+        "phone",
+        "purpose"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

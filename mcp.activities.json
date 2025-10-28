@@ -1,0 +1,28 @@
+{
+  "status": "ok",
+  "message": "Activities MCP serverless function is healthy",
+  "tool": {
+    "name": "activities_list",
+    "description": "List upcoming VillageOS activities available to the user session.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "sessionid": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "upcoming",
+            "completed",
+            "all"
+          ]
+        }
+      },
+      "required": [
+        "sessionid"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
